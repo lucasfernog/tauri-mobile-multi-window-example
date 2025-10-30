@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { WebviewWindow } from "@tauri-apps/api/webviewWindow"
 
 const items = [
   { id: "1", name: "First item" },
@@ -32,6 +33,20 @@ export default function List() {
     padding: 0,
   };
 
+  function openDetail(id: string) {
+    const a = new WebviewWindow(`detail-window-${id}`, {
+        url: `detail/${id}`,
+        // @ts-expect-error new API package not released yet :P
+        activityName: "DetailActivity"
+    })
+    a.once('tauri://created', function () {
+      console.log('done')
+    });
+    a.once('tauri://error', function (e) {
+        console.error(e)
+    });
+  }
+
   return (
     <div style={viewportStyles}>
       <div style={paperStyles}>
@@ -45,8 +60,8 @@ export default function List() {
                   borderBottom: isLast ? "none" : "1px solid rgba(0,0,0,0.08)",
                 }}
               >
-                <Link
-                  to={`/detail/${item.id}`}
+                <div
+                  onClick={() => openDetail(item.id)}
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -58,11 +73,11 @@ export default function List() {
                     transition: "background 120ms ease",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.background =
+                    e.currentTarget.style.background =
                       "rgba(0,0,0,0.035)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.background =
+                    e.currentTarget.style.background =
                       "transparent";
                   }}
                 >
@@ -92,7 +107,7 @@ export default function List() {
                   <span aria-hidden style={{ color: "#9e9e9e", fontSize: 20 }}>
                     ›
                   </span>
-                </Link>
+                </div>
               </li>
             );
           })}

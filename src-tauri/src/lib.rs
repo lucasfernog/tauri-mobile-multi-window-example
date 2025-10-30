@@ -14,6 +14,10 @@ pub fn run() {
                 .build(),
         )
         .invoke_handler(tauri::generate_handler![greet])
+        .setup(|app| {
+            tauri::WebviewWindowBuilder::new(app, "main", tauri::WebviewUrl::default()).build()?;
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

@@ -3829,7 +3829,7 @@ checksum = "61c41af27dd6d1e27b1b16b489db798443478cef1f06a660c96db617ba5de3b1"
 [[package]]
 name = "tauri"
 version = "2.9.2"
-source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#a6020088babec0ca66a6d5ddb76d51c5489853dd"
+source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#eb51b1329f26bf7a5f026e8852c65ade5f695f17"
 dependencies = [
  "anyhow",
  "bytes",
@@ -3901,7 +3901,7 @@ dependencies = [
 [[package]]
 name = "tauri-build"
 version = "2.5.1"
-source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#a6020088babec0ca66a6d5ddb76d51c5489853dd"
+source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#eb51b1329f26bf7a5f026e8852c65ade5f695f17"
 dependencies = [
  "anyhow",
  "cargo_toml",
@@ -3922,7 +3922,7 @@ dependencies = [
 [[package]]
 name = "tauri-codegen"
 version = "2.5.0"
-source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#a6020088babec0ca66a6d5ddb76d51c5489853dd"
+source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#eb51b1329f26bf7a5f026e8852c65ade5f695f17"
 dependencies = [
  "base64 0.22.1",
  "brotli",
@@ -3948,7 +3948,7 @@ dependencies = [
 [[package]]
 name = "tauri-macros"
 version = "2.5.0"
-source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#a6020088babec0ca66a6d5ddb76d51c5489853dd"
+source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#eb51b1329f26bf7a5f026e8852c65ade5f695f17"
 dependencies = [
  "heck 0.5.0",
  "proc-macro2",
@@ -4022,7 +4022,7 @@ dependencies = [
 [[package]]
 name = "tauri-runtime"
 version = "2.9.1"
-source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#a6020088babec0ca66a6d5ddb76d51c5489853dd"
+source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#eb51b1329f26bf7a5f026e8852c65ade5f695f17"
 dependencies = [
  "cookie",
  "dpi",
@@ -4046,7 +4046,7 @@ dependencies = [
 [[package]]
 name = "tauri-runtime-wry"
 version = "2.9.1"
-source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#a6020088babec0ca66a6d5ddb76d51c5489853dd"
+source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#eb51b1329f26bf7a5f026e8852c65ade5f695f17"
 dependencies = [
  "gtk",
  "http",
@@ -4109,7 +4109,7 @@ dependencies = [
 [[package]]
 name = "tauri-utils"
 version = "2.8.0"
-source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#a6020088babec0ca66a6d5ddb76d51c5489853dd"
+source = "git+https://github.com/tauri-apps/tauri/?branch=feat%2Fmobile-multi-window#eb51b1329f26bf7a5f026e8852c65ade5f695f17"
 dependencies = [
  "anyhow",
  "brotli",

@@ -6,6 +6,8 @@ fn greet(name: &str) -> String {
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    #[cfg(target_os = "ios")]
+    let mut counter = 0;
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
         .plugin(
@@ -18,6 +20,21 @@ pub fn run() {
             tauri::WebviewWindowBuilder::new(app, "main", tauri::WebviewUrl::default()).build()?;
             Ok(())
         })
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .build(tauri::generate_context!())
+        .expect("error while running tauri application")
+        .run(move |app, event| {
+            #[cfg(target_os = "ios")]
+            if let tauri::RunEvent::SceneRequested { .. } = event {
+                counter += 1;
+                tauri::WebviewWindowBuilder::new(
+                    app,
+                    format!("main-{counter}"),
+                    tauri::WebviewUrl::default(),
+                )
+                .build()
+                .unwrap();
+            }
+            #[cfg(not(target_os = "ios"))]
+            let (_app, _event) = (app, event);
+        });
 }
